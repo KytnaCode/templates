@@ -3,7 +3,7 @@
 
   outputs = {self}: {
     templates.go = {
-      path = "./go";
+      path = ./go;
       description = "module-based pure go project";
       welcomeText = ''
         # Go module
