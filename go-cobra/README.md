@@ -1,0 +1,3 @@
+# __MY_APP_NAME__
+
+__MY_APP_LONG_DESCRIPTION__
