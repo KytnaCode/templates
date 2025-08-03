@@ -1,5 +1,5 @@
-#!/usr/bin/env nix-shell
-#! nix-shell -i bash -p bash gum
+#!/usr/bin/env nix
+#! nix shell nixpkgs#bash nixpkgs#gum github:KytnaCode/scripts#license-sh --command bash
 # shellcheck shell=bash
 
 mod="$(gum input --placeholder="github.com/diana-cavendish/my-awesome-module" --header="Enter module name")"
@@ -12,3 +12,5 @@ gum confirm "Use direnv-nix?" &&
   echo "use_flake" >.envrc &&
   printf "\n\n.envrc\n.direnv" >>.gitignore &&
   echo ".envrc created, allow it with \`direnv allow\`"
+
+license.sh
