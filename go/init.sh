@@ -1,3 +1,14 @@
-#!/usr/bin/env sh
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p bash gum
+# shellcheck shell=bash
 
-go mod init "$1"
+mod="$(gum input --placeholder="github.com/diana-cavendish/my-awesome-module" --header="Enter module name")"
+
+go mod init "$mod"
+
+gum confirm "Init git repository?" && git init && git add -N .
+gum confirm "Use template's default golangci-lint config?" || rm -f .golangci.yml
+gum confirm "Use direnv-nix?" &&
+  echo "use_flake" >.envrc &&
+  printf "\n\n.envrc\n.direnv" >>.gitignore &&
+  echo ".envrc created, allow it with \`direnv allow\`"
