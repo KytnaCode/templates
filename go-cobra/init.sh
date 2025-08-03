@@ -1,5 +1,5 @@
 #!/usr/bin/env nix
-#! nix-shell nixpkgs#bash nixpkgs#gum nixpkgs#go --command=bash
+#! nix-shell nixpkgs#bash nixpkgs#gum nixpkgs#go github:KytnaCode/scripts#license-sh --command=bash
 # shellcheck shell=bash
 
 mod="$(gum input --placeholder="github.com/diana-cavendish/my-awesome-module" --header="Enter module name")"
@@ -64,5 +64,7 @@ else
   sed -i '/__MY_APP_DESCRIPTION__/d' ./cmd/root.go
   sed -i '/__MY_APP_LONG_DESCRIPTION__/d' README.md
 fi
+
+license.sh
 
 rm -f init.sh
