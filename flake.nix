@@ -51,9 +51,10 @@
         welcomeText = ''
           # Go + Cobra
 
-          ## Init project
-
+          ```
+          chmod +x .init.sh
           ./init.sh
+          ```
         '';
       };
     };
