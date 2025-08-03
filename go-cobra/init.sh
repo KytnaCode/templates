@@ -1,5 +1,6 @@
-#!/usr/bin/env nix-shell
-#! nix-shell -i zsh -p zsh gum go
+#!/usr/bin/env nix
+#! nix-shell nixpkgs#bash nixpkgs#gum nixpkgs#go --command=bash
+# shellcheck shell=bash
 
 mod="$(gum input --placeholder="github.com/diana-cavendish/my-awesome-module" --header="Enter module name")"
 name="$(gum input --placeholder="my-awesome-package..." --header="Enter package name" --value="${mod##*/}")"
