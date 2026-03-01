@@ -19,6 +19,15 @@
           golangci-lint
         ];
       };
+
+      go-bun = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          go
+          golangci-lint
+
+          bun
+        ];
+      };
     });
 
     templates = {
