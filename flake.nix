@@ -31,7 +31,6 @@
           ```
           chmod +x ./init.sh
           ./init.sh
-          rm -f ./init.sh
           ```
 
           To automatically enter devshell using `direnv` and `direnv-nix`

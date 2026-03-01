@@ -14,3 +14,10 @@ gum confirm "Use direnv-nix?" &&
   echo ".envrc created, allow it with \`direnv allow\`"
 
 license.sh
+
+gum style \
+  --foreground 212 --border-foreground 212 --border double \
+  --align center --width 50 --margin "1 2" --padding "2 4" \
+  "Project scaffolded sucefully, this script will self-destruct"
+
+rm -f ./init.sh
