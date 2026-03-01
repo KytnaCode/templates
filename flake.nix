@@ -3,19 +3,16 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    systems.url = "github:nix-systems/default";
   };
 
   outputs = {
     self,
     nixpkgs,
-    systems,
   }: let
-    eachSystem = nixpkgs.lib.genAttrs (import systems);
+    systems = ["x86_64-linux"];
+    eachSystem = f: nixpkgs.lib.genAttrs systems (system: f (import nixpkgs {inherit system;}));
   in {
-    devShells = eachSystem (system: let
-      pkgs = import nixpkgs {inherit system;};
-    in {
+    devShells = eachSystem (pkgs: {
       go = pkgs.mkShell {
         buildInputs = with pkgs; [
           go
