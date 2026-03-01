@@ -1,5 +1,5 @@
 #!/usr/bin/env nix
-#! nix-shell nixpkgs#bash nixpkgs#gum nixpkgs#go github:KytnaCode/scripts#license-sh --command=bash
+#! nix-shell nixpkgs#bash nixpkgs#gum nixpkgs#go github:KytnaCode/scripts#license-sh --command bash
 # shellcheck shell=bash
 
 mod="$(gum input --placeholder="github.com/diana-cavendish/my-awesome-module" --header="Enter module name")"
