@@ -13,7 +13,7 @@
     eachSystem = f: nixpkgs.lib.genAttrs systems (system: f (import nixpkgs {inherit system;}));
   in {
     devShells = eachSystem (pkgs: {
-      default = pkgs.mkShell {
+      default = pkgs.mkShellNoCC {
         buildInputs = with pkgs; [
           git
 
@@ -21,6 +21,8 @@
           go
           golangci-lint
         ];
+
+        CGO_ENABLE = 0;
       };
     });
   };
