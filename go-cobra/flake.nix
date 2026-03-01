@@ -3,19 +3,16 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    systems.url = "github:nix-systems/default";
   };
 
   outputs = {
     self,
     nixpkgs,
-    systems,
   }: let
-    eachSystem = nixpkgs.lib.genAttrs (import systems);
+    systems = ["x86_64-linux"];
+    eachSystem = nixpkgs.lib.genAttrs systems (system: import nixpkgs {inherit system;});
   in {
-    devShells = eachSystem (system: let
-      pkgs = import nixpkgs {inherit system;};
-    in {
+    devShells = eachSystem (pkgs: {
       default = pkgs.mkShell {
         buildInputs = with pkgs; [
           git
@@ -28,9 +25,7 @@
       };
     });
 
-    packages = eachSystem (system: let
-      pkgs = import nixpkgs {inherit system;};
-    in rec {
+    packages = eachSystem (pkgs: rec {
       __MY_APP_NAME__ = pkgs.lib.buildGoModule {
         pname = "__MY_APP_NAME__";
         version = "0.1.0";
