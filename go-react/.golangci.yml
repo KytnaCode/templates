@@ -1,0 +1,129 @@
+version: "2"
+
+linters:
+  enable:
+    - asasalint
+    - asciicheck
+    - bidichk
+    - bodyclose
+    - canonicalheader
+    - containedctx
+    - dupl
+    - dupword
+    - durationcheck
+    - embeddedstructfieldcheck
+    - err113
+    - errcheck
+    - errchkjson
+    - errname
+    - errorlint
+    - exhaustive
+    - exptostd
+    - forbidigo
+    - gocheckcompilerdirectives
+    - gochecknoglobals
+    - gochecknoinits
+    - goconst
+    - gocritic
+    - godot
+    - godox
+    - goprintffuncname
+    - gosec
+    - govet
+    - iface
+    - importas
+    - ineffassign
+    - ireturn
+    - lll
+    - loggercheck
+    - makezero
+    - misspell
+    - mnd
+    - musttag
+    - nilerr
+    - nilnil
+    - nlreturn
+    - nolintlint
+    - nosprintfhostport
+    - paralleltest
+    - perfsprint
+    - predeclared
+    - reassign
+    - revive
+    - sloglint
+    - staticcheck
+    - tagalign
+    - tagliatelle
+    - testpackage
+    - thelper
+    - tparallel
+    - unconvert
+    - unused
+    - usestdlibvars
+    - usetesting
+    - wastedassign
+    - whitespace
+    - wrapcheck
+    - wsl_v5
+  settings:
+    errcheck:
+      check-type-assertions: true
+      check-blank: true
+      exclude-functions:
+        - encoding/json.Marshal
+        - encoding/json.MarshalIndent
+    errchkjson:
+      check-error-free-encoding: true
+    exhaustive:
+      default-signifies-exhaustive: true
+    goconst:
+      min-len: 3
+      min-occurrences: 2
+      numbers: true
+      min: 3
+    godot:
+      scope: all
+    misspell:
+      locale: US
+    nolintlint:
+      require-explanation: true
+      require-specific: true
+    revive:
+      rules:
+        - name: package-comments
+          disabled: true
+    govet:
+      enable:
+        - appends
+        - assign
+        - atomic
+        - atomicalign
+        - bools
+        - buildtag
+        - copylocks
+        - deepequalerrors
+        - defers
+        - errorsas
+        - fieldalignment
+        - httpresponse
+        - ifaceassert
+        - lostcancel
+        - nilfunc
+        - nilness
+        - printf
+        - reflectvaluecompare
+        - shadow
+        - sigchanyzer
+        - slog
+        - sortslice
+        - stdmethods
+        - stringintconv
+        - testinggoroutine
+        - tests
+        - unreachable
+        - unusedwrite
+        - waitgroup
+formatters:
+  enable:
+    - gofumpt
+    - goimports

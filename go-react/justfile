@@ -1,0 +1,10 @@
+[parallel]
+dev:
+  just --justfile {{justfile()}} back-dev & just --justfile {{justfile()}} front-dev "--clearScreen=false"
+
+back-dev *args="":
+  air "$@"
+
+[positional-arguments]
+front-dev *args="":
+  (cd ./frontend; bun run dev "$@")

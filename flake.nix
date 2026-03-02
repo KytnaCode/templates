@@ -62,6 +62,21 @@
           ```
         '';
       };
+
+      go-react = {
+        path = ./go-react;
+        description = "Go + React + Typescript application";
+        welcomeText = ''
+          # Go + React + Typescript
+
+          Remember to run init script.
+
+          ```
+          chmod +x ./init.sh
+          ./init.sh
+          ```
+        '';
+      };
     };
   };
 }
