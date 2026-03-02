@@ -23,9 +23,9 @@
           # Misc
           just
         ];
-      };
 
-      CGO_ENABLED = 0;
+        CGO_ENABLED = 0;
+      };
     });
   };
 }
