@@ -25,5 +25,20 @@
         CGO_ENABLE = 0;
       };
     });
+
+    packages = eachSystem (pkgs: rec {
+      default = __PACKAGE_NAME__;
+
+      __PACKAGE_NAME__ = pkgs.buildGoModule (finalAttrs: {
+        pname = "__BIN_NAME__";
+        version = "0.1.0";
+
+        src = ./.;
+
+        vendorHash = "__PACKAGE_HASH__";
+
+        env.CGO_ENABLED = 0;
+      });
+    });
   };
 }

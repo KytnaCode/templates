@@ -13,6 +13,13 @@ gum confirm "Use direnv-nix?" &&
   printf "\n\n.envrc\n.direnv" >>.gitignore &&
   echo ".envrc created, allow it with \`direnv allow\`"
 
+pkgName="$(gum input --header="Insert package name" --placeholder="myawesomepackage...")"
+
+pname="$(gum input --header="Insert binary name" --placeholder="myawesomebin..." --value="$pkgName")"
+
+sed -i "s/__PACKAGE_NAME__/$pkgName/g" flake.nix
+sed -i "s/__BIN_NAME__/$pname/g" flake.nix
+
 license.sh
 
 gum style \
