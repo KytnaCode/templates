@@ -1,10 +1,8 @@
 [parallel]
-dev:
-  just --justfile {{justfile()}} back-dev & just --justfile {{justfile()}} front-dev "--clearScreen=false"
+dev: back-dev front-dev
 
-back-dev *args="":
-  air "$@"
+back-dev:
+  air
 
-[positional-arguments]
-front-dev *args="":
-  (cd ./frontend; bun run dev "$@")
+front-dev:
+  (cd ./frontend; bun run dev --no-clearScreen)
