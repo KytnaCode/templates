@@ -41,12 +41,6 @@
           chmod +x ./init.sh
           ./init.sh
           ```
-
-          To automatically enter devshell using `direnv` and `direnv-nix`
-
-          ```
-          direnv allow
-          ```
         '';
       };
 
