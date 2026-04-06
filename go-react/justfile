@@ -6,3 +6,22 @@ back-dev:
 
 front-dev:
   (cd ./frontend; bun run dev --no-clearScreen)
+
+lint:
+  golangci-lint run ./...
+  (cd ./frontend; bun run lint)
+
+fmt:
+  golangci-lint fmt ./...
+  (cd ./frontend; bun run format)
+
+test:
+  go test ./...
+  # TODO: Configure frontend tests.
+
+check:
+  govulncheck ./...
+  gosec ./...
+
+precommit: fmt lint check
+  go test --short ./...

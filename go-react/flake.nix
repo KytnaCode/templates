@@ -16,6 +16,8 @@
           go
           golangci-lint
           air
+          gosec
+          govulncheck
 
           # Frontend
           bun
