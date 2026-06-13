@@ -5,10 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-  }: let
+  outputs = {nixpkgs, ...}: let
     systems = ["x86_64-linux"];
     eachSystem = nixpkgs.lib.genAttrs systems (system: import nixpkgs {inherit system;});
   in {
