@@ -19,7 +19,7 @@
           golangci-lint
         ];
 
-        CGO_ENABLE = 0;
+        CGO_ENABLED = 0;
       };
     });
   };
