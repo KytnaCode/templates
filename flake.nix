@@ -31,6 +31,11 @@
     });
 
     templates = {
+      default = {
+        path = ./default;
+        description = "empty flake";
+      };
+
       go = {
         path = ./go;
         description = "module-based pure go project";
