@@ -73,6 +73,11 @@
           ```
         '';
       };
+
+      bun-lib = {
+        path = ./bun-lib;
+        description = "bun and typescript based library";
+      };
     };
   };
 }
