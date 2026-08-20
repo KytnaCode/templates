@@ -1,0 +1,16 @@
+fmt:
+  golangci-lint fmt ./...
+
+lint:
+  golangci-lint run ./...
+
+test TEST:
+  go test -run ^Test{{TEST}} ./...
+
+test-all:
+  go test ./...
+
+test-all-short:
+  go test -short ./...
+
+precommit: fmt lint test-all

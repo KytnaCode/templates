@@ -13,6 +13,7 @@
       default = pkgs.mkShellNoCC {
         buildInputs = with pkgs; [
           git
+          just
 
           # Go packages
           go
