@@ -1,4 +1,12 @@
-@import 'tailwindcss';
+@import "tailwindcss/theme.css";
+@import "tailwindcss/utilities.css";
+
+@theme inline {
+  --color-brand: var(--mantine-primary-color-filled);
+  --color-surface: var(--mantine-color-body);
+  --color-text: var(--mantine-color-text);
+  --radius-md: var(--mantine-radius-md);
+}
 
 html,
 body,
