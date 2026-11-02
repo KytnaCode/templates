@@ -78,6 +78,11 @@
         path = ./bun-lib;
         description = "bun and typescript based library";
       };
+
+      react-mantine-tailwindcss = {
+        path = ./react-mantine-tailwind;
+        description = "React + Typescriot + Mantine + TailwindCSS";
+      };
     };
   };
 }
